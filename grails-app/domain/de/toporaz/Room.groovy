@@ -28,6 +28,6 @@ class Room {
         Verkaufsraum
     }
     String toString(){
-        $("name")
+        return name
     }
 }

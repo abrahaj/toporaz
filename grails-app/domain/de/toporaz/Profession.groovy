@@ -8,6 +8,6 @@ class Profession {
         description size: 1..255
     }
     String toString(){
-        $("name")
+       return name
     }
 }

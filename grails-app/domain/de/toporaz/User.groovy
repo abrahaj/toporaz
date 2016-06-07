@@ -22,7 +22,7 @@ class User {
         UserAuthority.findAllByUser(this).collect { it.authority }
     }
     String toString(){
-        $("username")
+        return username
     }
 
 }

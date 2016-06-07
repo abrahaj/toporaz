@@ -12,6 +12,6 @@ class Measurement {
         name nullable: false
     }
     String toString(){
-        $("name")
+        return name
     }
 }

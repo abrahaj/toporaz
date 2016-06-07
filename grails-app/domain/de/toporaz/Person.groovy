@@ -9,12 +9,12 @@ class Person {
     Profession profession
     static hasMany = [marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction]
     static hasOne = [birth:Birth, death:Death]
-    static mappedBy = [marriage:"partner1"]
+    static mappedBy = [marriage:"partner"]
 
     SocialStatusType socialStatus
 
     String toString(){
-        $("name")
+        return name
     }
 
     static constraints = {
