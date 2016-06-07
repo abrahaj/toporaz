@@ -43,6 +43,6 @@ class Furnishing {
         conservationStatusReference nullable: true
     }
     String toString(){
-        $("name")
+        return name
     }
 }
