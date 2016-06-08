@@ -22,6 +22,6 @@ class Address {
     }
 
     String toString(){
-        $("houseName")
+        return houseName
     }
 }

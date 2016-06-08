@@ -1,3 +1,3 @@
 grails.gorm.default.constraints = {
-    '*'(nullable: true, size: 1..20)
+    '*'(nullable: true, size: 0..200)
 }

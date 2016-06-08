@@ -1,4 +1,6 @@
 import de.toporaz.Authority
+import de.toporaz.Document
+import de.toporaz.Person
 import de.toporaz.Profession
 import de.toporaz.User
 import de.toporaz.UserAuthority
@@ -25,6 +27,14 @@ class BootStrap {
                     def p1 = new Profession(name: 'DOMESTIC', description: 'Household servant').save(failOnError: true)
                     def p2 = new Profession(name: 'DOOR KEEPER', description: 'Guard, janitor, or porter ').save(failOnError: true)
                     def p3 = new Profession(name: 'GATER', description: 'Watchman, Security ').save(failOnError: true)
+
+                    Person person1 = new Person (name:"Armand Brahaj").save(failOnError: true)
+                    new Person (name:"Julia Hoxha").save(failOnError: true)
+                    new Person (name:"Stefan Bozic").save(failOnError: true)
+
+                    new Document (name:"Source 1 ",author:person1).save(failOnError: true)
+                    new Document (name:"Source 2 ",author:person1).save(failOnError: true)
+                    new Document (name:"Source 3 ",author:person1).save(failOnError: true)
 
 
                 }catch (HibernateException h){

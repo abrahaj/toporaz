@@ -7,6 +7,7 @@ class AdministrativeFunction {
     ToporazDate start
     ToporazDate end
     Document reference
+    Person person
 
     static mappedBy = [start: "none", end: "none"]
 
@@ -20,6 +21,6 @@ class AdministrativeFunction {
         reference nullable:true
     }
     String toString(){
-        $("name")
+        return name
     }
 }

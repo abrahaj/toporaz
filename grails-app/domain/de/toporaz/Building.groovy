@@ -35,6 +35,6 @@ class Building {
     }
 
     String toString(){
-        $("name")
+        return name
     }
 }

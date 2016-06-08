@@ -1,16 +1,16 @@
 package de.toporaz
 
 class Person {
+    static belongsTo = [Marriage,PersonRelation]
+
     String name
     String note
-    //TODO HAS MORE THAN ONE ALTERNATIVE NAME
-    String alternativeName
-
     Profession profession
-    static hasMany = [marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction]
-    static hasOne = [birth:Birth, death:Death]
-    static mappedBy = [marriage:"partner"]
+    static hasMany = [alternativeName: String, marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction]
 
+    Birth birth
+    Death death
+    static embedded = ['birth', 'death']
     SocialStatusType socialStatus
 
     String toString(){
@@ -21,8 +21,8 @@ class Person {
         name nullable: false
         note blank: true, nullable: true, type: 'text'
         alternativeName nullable: true
-        birth nullable:true
-        death nullable:true
+        birth nullable:true,  unique: true
+        death nullable:true, unique: true
         profession nullable:true
         marriage nullable: true
         relation nullable:true

@@ -19,6 +19,6 @@ class BuildingPartPhase {
         reference nullable:true
     }
     String toString(){
-        $("name")
+        return name
     }
 }

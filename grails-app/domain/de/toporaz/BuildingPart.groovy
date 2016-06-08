@@ -29,6 +29,6 @@ class BuildingPart {
     }
 
     String toString(){
-        $("name")
+        return name
     }
 }

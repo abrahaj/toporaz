@@ -37,6 +37,6 @@ class Document {
         referenceBuilding nullable: true
     }
     String toString(){
-        $("name")
+        return name
     }
 }

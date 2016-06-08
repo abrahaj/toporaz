@@ -2,7 +2,7 @@ package de.toporaz
 
 class PersonRelation {
     RelationType relationType
-    Person person
+    static hasMany=[person:Person]
     static constraints = {
     }
 
