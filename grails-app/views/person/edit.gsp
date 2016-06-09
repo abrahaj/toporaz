@@ -4,6 +4,9 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
+
+        <asset:javascript src="vendor/tinymce/tinymce.min.js"/>
+        <asset:javascript src="tinymceboot.js"/>
     </head>
     <body>
         <a href="#edit-person" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

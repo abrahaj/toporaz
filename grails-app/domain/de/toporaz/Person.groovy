@@ -19,7 +19,7 @@ class Person {
 
     static constraints = {
         name nullable: false
-        note blank: true, nullable: true, type: 'text'
+        note blank: true, nullable: true, type: 'text', widget: 'textarea'
         alternativeName nullable: true
         birth nullable:true,  unique: true
         death nullable:true, unique: true
