@@ -7,7 +7,8 @@ class BuildingTypology {
 
     ToporazDate typologyStart
     ToporazDate typologyEnd
-
+    Building building
+    static belongsTo=Building
     static hasMany = [reference: Document]
 
 
@@ -19,6 +20,10 @@ class BuildingTypology {
         typologyStart nullable: true
         typologyEnd nullable: true
         reference nullable: true
+    }
+
+    String toString(){
+        return buildingTypology
     }
 
     enum BuildingTypologyEnum {

@@ -4,8 +4,10 @@ class BuildingOwnership {
     String note
     Person previousOwner
     Person newOwner
-    ToporazDate start
-    ToporazDate end
+    Date start
+    Date end
+    Building building
+    static belongsTo=Building
     Document reference
     static mappedBy = [start: "none", end: "none", previousOwner:"none", newOwner:'none']
     static constraints = {

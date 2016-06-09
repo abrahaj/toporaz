@@ -8,7 +8,8 @@ class BuildingPartPhase {
     ToporazDate demolitionConversionDate
     static hasMany = [reference: Document]
 
-
+    BuildingPart buildingPart
+    static belongsTo=BuildingPart
     static mappedBy = [start: "none", end: "none", demolitionConversionDate: "none"]
     static constraints = {
         name nullable: false

@@ -7,7 +7,8 @@ class BuildingFunction {
 
     ToporazDate functionStart
     ToporazDate functionEnd
-
+    Building building
+    static belongsTo=Building
     static hasMany = [reference: Document]
 
 

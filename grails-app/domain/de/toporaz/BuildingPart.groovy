@@ -8,6 +8,8 @@ class BuildingPart {
     String material
     static hasMany = [commissionedBy: Person, buildingPartPhase: BuildingPartPhase, facade:Facade, roof:Roof,level:Level]
 
+    Building building
+    static belongsTo=[Building, BuildingPartPhase, Facade, Roof, Level]
 
 
     static constraints = {

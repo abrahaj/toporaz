@@ -9,7 +9,8 @@ class Level {
     String height
     String material
     static hasMany = [reference: Document, room:Room]
-
+    BuildingPart buildingPart
+    static belongsTo=BuildingPart
     static constraints = {
         name()
         location blank: false, nullable: false
@@ -23,6 +24,6 @@ class Level {
 
     }
     String toString(){
-        $("name")
+        return name
     }
 }

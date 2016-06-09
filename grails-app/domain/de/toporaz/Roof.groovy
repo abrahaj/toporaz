@@ -8,7 +8,8 @@ class Roof {
     String direction
     String element
     static hasMany = [reference: Document]
-
+    BuildingPart buildingPart
+    static belongsTo=BuildingPart
     static constraints = {
         name blank: false, nullable: false
         note blank: true, nullable: true, type: 'text'

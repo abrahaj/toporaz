@@ -8,7 +8,9 @@ class Building {
 
     BuildingReference firstReference
     BuildingReference desctructionReference
+    static embedded = ['firstReference', 'desctructionReference']
 
+    static belongsTo=[BuildingOwnership, BuildingFunction, BuildingTypology, Address, BuildingPart]
 
 
     static mappedBy = [ firstReference: "none", desctructionReference: "none" ]

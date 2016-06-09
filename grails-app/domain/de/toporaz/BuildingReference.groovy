@@ -1,7 +1,7 @@
 package de.toporaz
 
 class BuildingReference {
-    ToporazDate date
+    Date date
     Document document
 
     static constraints = {

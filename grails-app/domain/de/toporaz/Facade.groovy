@@ -7,7 +7,8 @@ class Facade {
     String axes
     String elements
     static hasMany = [reference: Document, furnishing:Furnishing]
-
+    BuildingPart buildingPart
+    static belongsTo=BuildingPart
     static constraints = {
         name blank: false, nullable: false
         note blank: true, nullable: true, type: 'text'
@@ -18,6 +19,6 @@ class Facade {
         reference nullable: true
     }
     String toString(){
-        $("name")
+        return name
     }
 }

@@ -7,6 +7,9 @@ class Address {
     String number
     String sNumber
     ToporazDate period
+
+    Building building
+    static belongsTo=Building
     static hasMany = [reference: Document]
 
     static constraints = {
