@@ -18,7 +18,7 @@ class DocumentController {
     }
 
     def create() {
-        respond new Document(params)
+        respond new Document(params),[model: [persons: Person.list()]]
     }
 
     @Transactional
