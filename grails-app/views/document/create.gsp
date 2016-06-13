@@ -4,6 +4,10 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'document.label', default: 'Document')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="vendor/jquery-ui.min.css" />
+        <asset:stylesheet src="vendor/jquery-ui.theme.min.css" />
+
+
     </head>
     <body>
         <a href="#create-document" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -39,15 +43,16 @@
                                                              id="type"/>
                     </div>
 
-                    <div class='fieldcontain required'>
+                    <div class='fieldcontain'>
                         <label for='author'>Author
                             <span class='required-indicator'>*</span>
                         </label>
-                        <ul>
+                        <select class="combobox" name="author" id="author">
+                            <option value="">Select one...</option>
                             <g:each in="${persons}">
-                                <li>${it.name}</li>
+                                <option value="${it.id}">${it.name}</option>
                             </g:each>
-                        </ul>
+                        </select>
                         <a href="/person/create?document.id=">Add Person</a>
                     </div>
 
@@ -116,5 +121,7 @@
                 </fieldset>
             </g:form>
         </div>
+    <asset:javascript src="vendor/jquery-ui/jquery-ui.min.js"/>
+    <asset:javascript src="autocompleteboot.js"/>
     </body>
 </html>

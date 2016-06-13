@@ -1,7 +1,6 @@
-/**
- * @Author arb
- * Boot TinyMce for use
- */
+//= require jquery-2.2.0.min
+//= require_tree vendor/tinymce/.
+//= require_self
 if (typeof jQuery !== 'undefined') {
     (function($) {
         //use window.bind to load the tinymce per last. Otherwise will throw error

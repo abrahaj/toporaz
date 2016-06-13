@@ -18,11 +18,14 @@ class DocumentController {
     }
 
     def create() {
+        println "HERE IT IS "
         respond new Document(params),[model: [persons: Person.list()]]
     }
 
     @Transactional
     def save(Document document) {
+        println "HERE IT IS "+params
+        log.info("HERE IT IS ");
         if (document == null) {
             transactionStatus.setRollbackOnly()
             notFound()
