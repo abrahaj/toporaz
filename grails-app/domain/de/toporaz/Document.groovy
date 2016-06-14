@@ -5,11 +5,6 @@ class Document {
     String type
     ToporazDate publishedDate
     String publishedLocation
-
-    static belongsTo = Person
-    static hasMany = [author: Person, referencePerson: Person, referenceBuilding: Building, changeLocation: ChangeLocation]
-
-
     String shelfmark
     String scale
     String measurement
@@ -17,13 +12,13 @@ class Document {
     String placeOfStorage
     String digitalCopy
 
+    static hasMany = [author: Person, referencePerson: Person, referenceBuilding: Building, changeLocation: ChangeLocation]
 
-    static mappedBy = [quotes: "none", author: "none"]
 
     static constraints = {
         name blank: false, nullable: false
         type blank: true, nullable: true
-        author nullable: false
+        author nullable: true
         publishedDate blank: true, nullable: true
         publishedLocation blank: true, nullable: true
         changeLocation nullable: true

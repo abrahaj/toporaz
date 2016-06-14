@@ -1,13 +1,10 @@
 package de.toporaz
 
 class Person {
-    static belongsTo = [Marriage,PersonRelation]
 
     String name
     String note
     Profession profession
-    static hasMany = [alternativeName: String, marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction]
-
     Birth birth
     Death death
     static embedded = ['birth', 'death']
@@ -16,6 +13,10 @@ class Person {
     String toString(){
         return name
     }
+
+    static hasMany = [alternativeName: String, marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction, documents:Document]
+
+    static belongsTo = [Marriage,PersonRelation, Document]
 
     static constraints = {
         name nullable: false
