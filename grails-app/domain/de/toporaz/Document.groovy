@@ -2,8 +2,9 @@ package de.toporaz
 
 class Document {
     String name
-    String type
-    ToporazDate publishedDate
+    String note
+    DocumentType type
+    Date publishedDate
     String publishedLocation
     String shelfmark
     String scale
@@ -14,9 +15,12 @@ class Document {
 
     static hasMany = [author: Person, referencePerson: Person, referenceBuilding: Building, changeLocation: ChangeLocation]
 
+    static mappedBy = [author:"authorOfBook",referencePerson:"referredPerson",changeLocation:'document']
+
 
     static constraints = {
         name blank: false, nullable: false
+        note blank: true, nullable: true, type: 'text', widget: 'textarea'
         type blank: true, nullable: true
         author nullable: true
         publishedDate blank: true, nullable: true
@@ -33,5 +37,16 @@ class Document {
     }
     String toString(){
         return name
+    }
+
+
+    enum DocumentType {
+        IMAGE,
+        MAP,
+        MOVIE,
+        PUBLISHED,
+        SCIENTIFIC_LITERATURE,
+        WRITTEN_SOURCE_PUBLISHED,
+        WRITTEN_SOURCE_UNPUBLISHED
     }
 }

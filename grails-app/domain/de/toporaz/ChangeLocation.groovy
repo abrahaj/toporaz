@@ -5,15 +5,20 @@ class ChangeLocation {
     String name
     Building transferredFrom
     Building transferredTo
-    ToporazDate date
-    Document locationReference
+    Date date
+    Document referenceForChange
 
-    static mappedBy = [ transferredFrom: "none", transferredTo: "none" ]
+    static belongsTo = [document:Document]
+
+    static mappedBy = [ transferredFrom: "none", transferredTo: "none", document:"changeLocation"]
+
     static constraints = {
         name nullable: false
+        document editable:false
+        referenceForChange()
     }
 
     String toString(){
-        $("name")
+       return name
     }
 }

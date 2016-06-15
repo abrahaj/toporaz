@@ -14,9 +14,11 @@ class Person {
         return name
     }
 
-    static hasMany = [alternativeName: String, marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction, documents:Document]
+    static hasMany = [alternativeName: String, marriage:Marriage, relation:PersonRelation, resident:Resident, administrativeFunction:AdministrativeFunction, authorOfBook:Document,referredPerson:Document]
 
     static belongsTo = [Marriage,PersonRelation, Document]
+
+    static mappedBy = [authorOfBook:"author",referredPerson:"referencePerson"]
 
     static constraints = {
         name nullable: false
